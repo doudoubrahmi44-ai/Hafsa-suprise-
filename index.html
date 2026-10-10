@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مفاجأة خاصة لـ حفصة ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            color: #d63384;
+            margin-bottom: 15px;
+            font-size: 26px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+        .cute-img {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        .question-box {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px dashed #ffb6c1;
+        }
+        input[type="date"] {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 2px solid #ffb6c1;
+            border-radius: 10px;
+            outline: none;
+            margin-top: 10px;
+            width: 80%;
+            text-align: center;
+        }
+        button {
+            background-color: #d63384;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #c82333;
+        }
+        .hidden {
+            display: none;
+        }
+        .love-message {
+            background: #fff0f5;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #ffb6c1;
+            margin-top: 20px;
+            text-align: right;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .error-msg {
+            color: #dc3545;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="cute-img">🎀 🌸 🧸</div>
+        
+        <!-- المرحلة الأولى: الترحيب والمغازلة -->
+        <div id="welcome-section">
+            <h1>مرحباً بك يا أميرتي حفصة! 💖</h1>
+            <p>
+                جيت نطل عليك بواحد المفاجأة صغيرة، لأنك تستاهلي كل حاجة جميلة في هذه الدنيا.. 
+                يا أجمل صدفة في حياتي، ويا منورتلي أيامي بكل حب وهدوء. 🌹
+            </p>
+            
+            <div class="question-box">
+                <p><b>سؤال صغير باش تثبتي بلي راكي الملكة الحقيقية تاع قلبي:</b><br>متى تاريخ ارتباطنا؟ 🤔❤️</p>
+                <input type="date" id="date-input">
+                <br>
+                <button onclick="checkDate()">تأكيد الإجابة ✨</button>
+                <div id="error" class="error-msg"></div>
+            </div>
+        </div>
+
+        <!-- المرحلة الثانية: الرسالة الكبيرة تظهر عند الإجابة الصحيحة -->
+        <div id="message-section" class="hidden">
+            <h1>إجابة صحيحة يا روح قلبي! 🎉💖</h1>
+            <div class="love-message">
+                <p>
+                    يا حبيبتي، يا روح قلبي، ونتي دايماً تغلطي بصح اعرفي بلي نحبك وربي هليك ويلي يا أعظم إنجازاتي وأنا فخور بيك بزاف بزاف! 🥺❤️<br><br>
+                    كل دقيقة معاك تسوى الدنيا وما فيها، ومحلاتها الحياة كي راكي فيها معايا. نتمنى تبقى ضحكتك منورة دنيتنا ديما، وتبقى علاقتنا أقوى وأجمل كل يوم.<br><br>
+                    نبغيك بلا حدود يا توأم روحي! 🥰💕
+                </p>
+            </div>
+            <p style="margin-top: 15px; font-weight: bold; color: #d63384;">موقع من حبيبك المخلص: doudou 🤍</p>
+        </div>
+
+    </div>
+
+    <script>
+        function checkDate() {
+            const userDate = document.getElementById('date-input').value;
+            const correctDate = "2026-09-06"; // التاريخ المطلوب
+            const errorDiv = document.getElementById('error');
+
+            if (userDate === correctDate) {
+                document.getElementById('welcome-section').classList.add('hidden');
+                document.getElementById('message-section').classList.remove('hidden');
+            } else {
+                errorDiv.textContent = "هوووف! غلطتي في التاريخ يا عمري، عاودي تخمري وتفكري مليح! 😜❌";
+            }
+        }
+    </script>
+
+</body>
+  </html>
+  
